@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favourite Places</title>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-3 pt-2 collapse" id="leftSideBar">
+                <h4 class="navTitle">Favourite Places</h4>
+                <!-- Search For Location -->
+                <input class="searchBar" data-bind="textInput: Searchfilter, valueupdate: 'afterkeydown'" placeholder="Search For Favourite Places ">
+                <ul class="nav flex-column" data-bind="foreach: filterdLocation">
+                    <a href="#" style="text-decoration: none;"><li class="nav-item locations" data-bind="text: title, click: $parent.markerBounce"></li></a>
+                </ul>
+            </nav>
+
+            <div class="col p-0">
+                <a href class="float-left navbar-light m-3" data-target="#leftSideBar" data-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div class="mapContent">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+            function minHeight() {
+                windowHeight = $(window).innerHeight();
+                $('#map').css('min-height', windowHeight);
+                $('#leftSideBar').css('min-height', windowHeight);
+            }
+            minHeight();
+            $(window).resize(function() {
+                minHeight();
+            });
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js??libraries=places,geometry&v=3&key=AIzaSyBRTschOElF6NRclmCZymKOoGb0jKlNtfU&callback=initialize" onerror="GoogleMapError()"></script>
+</body>
+</html>

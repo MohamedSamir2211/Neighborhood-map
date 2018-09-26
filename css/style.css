@@ -1,0 +1,27 @@
+.navTitle {
+    padding: 15px;
+    color:white;
+}
+
+#leftSideBar{
+    min-width: 300px;
+}
+
+#map,#leftSideBar{
+
+    min-height: 50%;
+}
+
+.locations {
+    padding: 5px;
+    color: gainsboro;
+}
+
+.searchBar {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mapContent ,#leftSideBar{
+    background-color: steelblue;
+}
