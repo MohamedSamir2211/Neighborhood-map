@@ -19,7 +19,7 @@
             <nav class="col-3 pt-2 collapse" id="leftSideBar">
                 <h4 class="navTitle">Favourite Places</h4>
                 <!-- Search For Location -->
-                <input class="searchBar" data-bind="textInput: Searchfilter, valueupdate: 'afterkeydown'" placeholder="Search For Favourite Places ">
+                <input class="searchBar" data-bind="textInput: Searchfilter, valueUpdate: 'keyup'" placeholder="Search For Favourite Places ">
                 <ul class="nav flex-column" data-bind="foreach: filterdLocation">
                     <a href="#" style="text-decoration: none;"><li class="nav-item locations" data-bind="text: title, click: $parent.markerBounce"></li></a>
                 </ul>
@@ -52,6 +52,6 @@
                 minHeight();
             });
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js??libraries=places,geometry&v=3&callback=initialize" onerror="GoogleMapError()"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyCFIDjjTAGmYBOx2jimhRTxawmZCixmQfE&v=3&callback=initialize" onerror="GoogleMapError()"></script>
 </body>
 </html>
